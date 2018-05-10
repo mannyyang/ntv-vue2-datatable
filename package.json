@@ -1,7 +1,7 @@
 {
   "name": "ntv-vue2-datatable",
   "description": "A fork of the vue2 datatable component.",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "dist/min.js",
   "module": "src/main.js",
   "author": "Ken Berkeley <kenberkeley@foxmail.com>",
