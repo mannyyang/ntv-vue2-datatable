@@ -12,7 +12,8 @@
     <div v-if="Pagination" class="row" style="margin-top: 10px">
       <div class="col-sm-6" style="white-space: nowrap">
         <strong>
-          {{ $i18nForDatatable('Total') }} {{ total }} {{ $i18nForDatatable(',') }}
+          <!-- {{ $i18nForDatatable('Total') }} {{ total }} {{ $i18nForDatatable(',') }}-->
+          Total {{total}},
         </strong>
         <page-size-select :query="query" :page-size-options="pageSizeOptions" />
       </div>

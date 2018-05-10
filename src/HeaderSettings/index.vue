@@ -14,7 +14,8 @@
       <div class="clearfix" style="margin: 10px 0">
         <div class="btn-group btn-group-sm pull-right">
           <button class="btn btn-default" type="button" @click="apply()">
-            {{ $i18nForDatatable('Apply') }}
+            <!-- {{ $i18nForDatatable('Apply') }} -->
+            Apply
           </button>
           <template v-if="supportBackup">
             <button data-toggle="dropdown" class="btn btn-default dropdown-toggle" type="button" style="box-shadow: none">
@@ -24,13 +25,15 @@
               <li @click="apply(true)">
                 <a href="#" @click.prevent>
                   <i class="fa fa-floppy-o"></i>&nbsp;
-                  {{ $i18nForDatatable('Apply and backup settings to local') }}
+                  <!-- {{ $i18nForDatatable('Apply and backup settings to local') }} -->
+                  Apply and backup settings to local
                 </a>
               </li>
               <li v-if="usingBak" @click="rmBackup()">
                 <a href="#" @click.prevent>
                   <i class="fa fa-trash-o text-danger"></i>&nbsp;
-                  {{ $i18nForDatatable('Clear local settings backup and restore') }}
+                  <!-- {{ $i18nForDatatable('Clear local settings backup and restore') }} -->
+                  Clear local settings backup and restore
                 </a>
               </li>
             </ul>
@@ -38,7 +41,8 @@
         </div>
       </div>
       <small v-if="usingBak" class="pull-left text-muted" style="margin-top: -8px">
-        ( {{ $i18nForDatatable('Using local settings') }} )
+        <!-- ( {{ $i18nForDatatable('Using local settings') }} ) -->
+        Using local settings
       </small>
     </div>
   </div>
