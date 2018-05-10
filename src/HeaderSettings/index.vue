@@ -48,7 +48,7 @@
   </div>
 </template>
 <script>
-import {$,jQuery} from 'jquery'
+import $ from 'jquery'
 import ColumnGroup from './ColumnGroup.vue'
 import groupBy from 'lodash/groupBy'
 import keyGen from '../_utils/keyGen'
