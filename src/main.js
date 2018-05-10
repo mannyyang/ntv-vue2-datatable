@@ -1,20 +1,16 @@
-import {$,jQuery} from 'jquery';
-// export for others scripts to use
-window.$ = $;
-window.jQuery = jQuery;
-import Datatable from './index.vue';
+import Datatable from './index.vue'
 
 Datatable.install = (Vue, options) => {
-  const locale = (options && options.locale) || {};
+  // const locale = (options && options.locale) || {};
 
   // this might be the simplest i18n solution
   // Vue.prototype.$i18nForDatatable = srcTxt => locale[srcTxt] || srcTxt
 
-  Vue.component('Datatable', Datatable);
-};
-
-if (typeof window !== 'undefined' && window.Vue) {
-  window.Vue.use(Datatable);
+  Vue.component('Datatable', Datatable)
 }
 
-export default Datatable;
+if (typeof window !== 'undefined' && window.Vue) {
+  window.Vue.use(Datatable)
+}
+
+export default Datatable

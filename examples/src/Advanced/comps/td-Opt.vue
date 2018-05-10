@@ -12,8 +12,9 @@
     </button>
   </div>
 </template>
-<script>
 
+<script>
+import {$,jQuery} from 'jquery';
 export default {
   props: ['row', 'nested'],
   mounted () {

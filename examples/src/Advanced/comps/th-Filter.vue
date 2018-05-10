@@ -16,6 +16,7 @@
   </div>
 </template>
 <script>
+import {$,jQuery} from 'jquery';
 export default {
   props: ['field', 'title', 'query'],
   data: () => ({
