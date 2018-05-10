@@ -1,11 +1,11 @@
 <template>
   <div name="Datatable">
-    <div v-if="$slots.default || HeaderSettings" class="clearfix" style="margin-bottom: 10px">
+    <!-- <div v-if="$slots.default || HeaderSettings" class="clearfix" style="margin-bottom: 10px">
       <header-settings v-if="HeaderSettings" class="pull-right"
         :columns="columns" :support-backup="supportBackup">
       </header-settings>
       <slot />
-    </div>
+    </div> -->
 
     <tbl v-bind="$props" />
     
@@ -24,7 +24,7 @@
   </div>
 </template>
 <script>
-import HeaderSettings from './HeaderSettings/index.vue'
+// import HeaderSettings from './HeaderSettings/index.vue'
 import Tbl from './Table/index.vue'
 import Pagination from './Pagination.vue'
 import PageSizeSelect from './PageSizeSelect.vue'
@@ -33,7 +33,12 @@ import props from './_mixins/props'
 export default {
   name: 'Datatable',
   mixins: [props],
-  components: { HeaderSettings, Tbl, Pagination, PageSizeSelect },
+  components: {
+    /* HeaderSettings, */
+    Tbl, 
+    Pagination, 
+    PageSizeSelect 
+  },
   created () {
     // init query (make all the properties observable by using `$set`)
     const q = { limit: 10, offset: 0, sort: '', order: '', ...this.query }
