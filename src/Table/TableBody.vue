@@ -3,7 +3,7 @@
     <template v-if="data.length">
       <template v-for="item in data">
         <tr>
-          <td v-if="shouldRenderSelection">
+          <td class="selection__body" v-if="shouldRenderSelection">
             <multi-select :selection="selection" :row="item" />
           </td>
           <td v-for="col in columns" :class="col.tdClass" :style="col.tdStyle">
