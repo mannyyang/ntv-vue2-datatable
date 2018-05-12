@@ -1,7 +1,6 @@
 <template>
   <thead>
-    <transition-group name="fade" tag="tr">
-      <th class="selection__header" v-if="shouldRenderSelection" key="--th-multi">
+    <th class="selection__header" v-if="shouldRenderSelection" key="--th-multi">
         <multi-select :selection="selection" :rows="data" />
       </th>
       <th v-for="(col, idx) in columns"
@@ -23,7 +22,6 @@
         <i v-if="col.explain" class="fa fa-info-circle" style="cursor: help" :title="col.explain"></i>
         <head-sort v-if="col.sortable" :field="col.field" :query="query" />
       </th>
-    </transition-group>
   </thead>
 </template>
 <script>
