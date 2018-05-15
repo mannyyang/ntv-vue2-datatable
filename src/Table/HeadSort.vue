@@ -1,12 +1,15 @@
 <template>
   <a class="ntv-table-header__sort" href="#" @click.prevent="handleClick" name="HeadSort">
-    <i class="ntv-table-header__sort-icon"><font-awesome-icon :icon="currArrow" /></i>
+    <i class="ntv-table-header__sort-icon">
+      <font-awesome-icon :icon="currArrow" size="xs" />
+    </i>
   </a>
 </template>
 <script>
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import faArrowUp from '@fortawesome/fontawesome-free-solid/faLongArrowAltUp';
 import faArrowDown from '@fortawesome/fontawesome-free-solid/faLongArrowAltDown';
+import faExchangeAlt from '@fortawesome/fontawesome-free-solid/faExchangeAlt';
 
 /**
  * Sorting arrows within <th>
@@ -31,7 +34,7 @@ export default {
         case 'desc':
           return this.arrowDown;
         default:
-          return null;
+          return this.arrowBoth;
       }
     },
     arrowUp() {
@@ -39,6 +42,9 @@ export default {
     },
     arrowDown() {
       return faArrowDown;
+    },
+    arrowBoth() {
+      return faExchangeAlt;
     }
   },
   watch: {
