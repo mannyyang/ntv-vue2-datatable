@@ -13,6 +13,9 @@ import faArrowDown from '@fortawesome/fontawesome-free-solid/faLongArrowAltDown'
  */
 export default {
   name: 'HeadSort',
+  components: {
+    FontAwesomeIcon
+  },
   props: {
     field: { type: String, required: true },
     query: { type: Object, required: true }
