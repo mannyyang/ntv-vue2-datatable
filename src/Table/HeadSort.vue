@@ -1,9 +1,13 @@
 <template>
-  <a href="#" @click.prevent="handleClick" name="HeadSort">
-    <i :class="cls"></i>
+  <a class="ntv-table-header__sort" href="#" @click.prevent="handleClick" name="HeadSort">
+    <i class="ntv-table-header__sort-icon"><font-awesome-icon :icon="currArrow" /></i>
   </a>
 </template>
 <script>
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import faArrowUp from '@fortawesome/fontawesome-free-solid/faLongArrowAltUp';
+import faArrowDown from '@fortawesome/fontawesome-free-solid/faLongArrowAltDown';
+
 /**
  * Sorting arrows within <th>
  */
@@ -17,32 +21,38 @@ export default {
     order: ''
   }),
   computed: {
-    cls () {
-      const { order } = this
-      return [
-        'fa',
-        { 'fa-sort text-muted': !order,
-          'fa-sort-up': order === 'asc',
-          'fa-sort-down': order === 'desc'
-        }
-      ]
+    currArrow() {
+      switch (this.order) {
+        case 'asc':
+          return this.arrowUp;
+        case 'desc':
+          return this.arrowDown;
+        default:
+          return null;
+      }
+    },
+    arrowUp() {
+      return faArrowUp;
+    },
+    arrowDown() {
+      return faArrowDown;
     }
   },
   watch: {
     query: {
-      handler ({ sort: field, order }) {
-        this.order = field === this.field ? order : ''
+      handler({ sort: field, order }) {
+        this.order = field === this.field ? order : '';
       },
       deep: true,
       immediate: true
     }
   },
   methods: {
-    handleClick () {
-      const { query, order } = this
-      query.sort = this.field
-      query.order = this.order = order === 'desc' ? 'asc' : 'desc'
+    handleClick() {
+      const { query, order } = this;
+      query.sort = this.field;
+      query.order = this.order = order === 'desc' ? 'asc' : 'desc';
     }
   }
-}
+};
 </script>

@@ -22,10 +22,11 @@
             </template>
           </td>
         </tr>
-        <transition name="fade">
+        <!-- nested component -->
+        <!-- <transition name="fade">
           <tr v-if="item.__nested__ && item.__nested__.visible">
             <td :colspan="colLen">
-              <!-- nested component -->
+              
               <component
                 :is="forDynCompIs(item.__nested__.comp)"
                 :row="item"
@@ -34,7 +35,7 @@
               </component>
             </td>
           </tr>
-        </transition>
+        </transition> -->
       </template>
     </template>
     <tr v-else-if="!leftFixed && !rightFixed">

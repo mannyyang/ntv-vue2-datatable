@@ -14,13 +14,14 @@
           :field="col.field"
           :title="col.title"
           v-bind="$props">
+          <head-sort v-if="col.sortable && col.thComp" :field="col.field" :query="query" />  
         </component>
         <template v-else>
           {{ col.title }}
         </template>
 
         <i v-if="col.explain" class="fa fa-info-circle" style="cursor: help" :title="col.explain"></i>
-        <head-sort v-if="col.sortable" :field="col.field" :query="query" />
+        <head-sort v-if="col.sortable && !col.thComp" :field="col.field" :query="query" />
       </th>
   </thead>
 </template>
